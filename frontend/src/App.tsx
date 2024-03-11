@@ -11,7 +11,15 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<Layout></Layout>}
+          element={<Layout>
+            <p>Home page</p>
+          </Layout>}
+        />
+         <Route
+          path="/search"
+          element={<Layout>
+            <p>search page</p>
+          </Layout>}
         />
       </Routes>
     </Router>
