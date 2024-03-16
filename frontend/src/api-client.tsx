@@ -17,6 +17,7 @@ export const register = async (formData: RegisterFormData) => {
     })
 
     const responseBody = await respone.json();
+     console.log('register',responseBody);
 
     if (!respone.ok) {
         throw new Error(responseBody.message);
@@ -32,6 +33,7 @@ export const validateToken = async () => {
         throw new Error("Token is not valid");
     }
 
+    console.log('validate-token',response);
     return response.json();
 }
 
