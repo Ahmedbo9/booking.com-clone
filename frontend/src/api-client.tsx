@@ -9,6 +9,7 @@ export const register = async (formData: RegisterFormData) => {
     
     const respone = await fetch (`${API_BASE_URL}/api/users/register`, {
         method: "POST",
+        credentials: "include",
         headers: {
             "Content-Type": "application/json"
         },
@@ -22,4 +23,19 @@ export const register = async (formData: RegisterFormData) => {
     }
 }
 
+export const validateToken = async () => {
+    const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
+        credentials: "include",
+    });
+
+    if (!response.ok) {
+        throw new Error("Token is not valid");
+    }
+
+    return response.json();
+}
+
+
+
+    
 
